@@ -1,0 +1,1 @@
+root.geometry("1020x600")
