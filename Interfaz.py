@@ -5,12 +5,15 @@ import Biseccion, TaylorLau,Newton_RaphsonV2
 def generar_newton_raphson():
     f_expr1 = newton_raphson_entry.get()
     x0 = float(x0_entry.get())
-    error = float(error_entry_newton.get())
-    iteraciones = int(iteraciones_entry.get())
-    
-    Newton_RaphsonV2.newthon_raphson(f_expr1, x0, error, iteraciones)
-    #newthon_raphson("x**2-8", 2.0)
-
+    if error_entry_newton.get()=='' or error_entry_newton.get().isspace():
+        if iteraciones_entry.get()=='' or iteraciones_entry.get().isspace():
+            Newton_RaphsonV2.newthon_raphson(f_expr1, x0)
+        else: 
+            iteraciones = int(iteraciones_entry.get())
+            Newton_RaphsonV2.newthon_raphson(expresion=f_expr1, punto_inicial=x0, numero_iteraciones=iteraciones)
+    else:
+        error = float(error_entry_newton.get())
+        Newton_RaphsonV2.newthon_raphson(expresion=f_expr1, punto_inicial=x0, tolerancia=error, numero_iteraciones=iteraciones)
     
 def generar_biseccion():
     f_expr2 = biseccion_entry.get()

@@ -40,7 +40,7 @@ def newthon_raphson(expresion, punto_inicial, tolerancia=0.00001, numero_iteraci
     for i in range(numero_iteraciones):
         punto_futuro = punto_actual - funcion(punto_actual) / derivada_funcion(punto_actual)
         roots.append(punto_futuro)
-        tabla.add_row([i, punto_actual, abs(punto_actual - punto_futuro)])
+        tabla.add_row([i+1, punto_actual, abs(punto_actual - punto_futuro)])
         if abs(punto_actual - punto_futuro) < tolerancia:
             # print(f'x {i + 1} = {punto_futuro} es una buena aproximacion de la raiz')
             
