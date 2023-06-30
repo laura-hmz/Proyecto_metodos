@@ -34,7 +34,7 @@ def generar_polinomio_taylor():
 # Crear la ventana principal
 ventana = tk.Tk()
 ventana.geometry("850x700")
-ventana.title("Calculadora de métodos numéricos")
+ventana.title("CALCULADORA DE MÉTODOS NUMÉRICOS")
 ventana.configure(bg="snow")
 
 
@@ -45,9 +45,13 @@ newton_raphson_frame.pack(fill=tk.X,pady=20)
 
 newton_raphson_label = tk.Label(newton_raphson_frame, text="Newton-Raphson", font=("Arial", 16, "bold"),bg="lightblue")
 newton_raphson_label.pack(pady=10)
+
+newton_raphson_descrip = tk.Label(newton_raphson_frame, 
+                                  text="Ingrese los valores Ejm: f(x)= x**2-8, x0= 2.0, Error=0.001, Iteraciones=10 (Ingreso opcional: tienen valores por defecto error=0.00001 iteraciones=20)",bg="lightblue")
+newton_raphson_descrip.pack()
 #####
 newton_raphson_entry_frame = tk.Frame(newton_raphson_frame,bg="lightblue")
-newton_raphson_entry_frame.pack(pady=30)
+newton_raphson_entry_frame.pack(pady=10)
 ###
 newton_raphson_label2 = tk.Label(newton_raphson_entry_frame, text="f(x)",bg="lightblue")
 newton_raphson_label2.pack(side=tk.LEFT)
@@ -61,13 +65,13 @@ x0_label.pack(side=tk.LEFT)
 x0_entry = tk.Entry(newton_raphson_entry_frame, width=20)
 x0_entry.pack(side=tk.LEFT, padx=5)
 
-error_label = tk.Label(newton_raphson_entry_frame, text="error",bg="lightblue")
+error_label = tk.Label(newton_raphson_entry_frame, text="Error",bg="lightblue")
 error_label.pack(side=tk.LEFT)
 
 error_entry_newton = tk.Entry(newton_raphson_entry_frame, width=20)
 error_entry_newton.pack(side=tk.LEFT, padx=5)
 
-iteraciones_label = tk.Label(newton_raphson_entry_frame, text="iteraciones",bg="lightblue")
+iteraciones_label = tk.Label(newton_raphson_entry_frame, text="Iteraciones",bg="lightblue")
 iteraciones_label.pack(side=tk.LEFT)
 
 iteraciones_entry = tk.Entry(newton_raphson_entry_frame, width=20)
@@ -86,9 +90,13 @@ biseccion_frame.pack(fill=tk.X, pady=20)
 
 biseccion_label = tk.Label(biseccion_frame, text="Bisección", font=("Arial", 16, "bold"),bg="lightyellow")
 biseccion_label.pack(pady=10)
+
+biseccion_label_descrip = tk.Label(biseccion_frame, 
+                                   text="Ingrese los valores Ejm: f(x)= x**3 + 4*x**2 - 10,  a= 1.0,  b= 2.0,  Error=0.0001 ([a,b] son los valores del intervalo)",bg="lightyellow")
+biseccion_label_descrip.pack()
 ##
 biseccion_entry_frame = tk.Frame(biseccion_frame,bg="lightyellow")
-biseccion_entry_frame.pack(pady=30)
+biseccion_entry_frame.pack(pady=10)
 ####
 biseccion_label2 = tk.Label(biseccion_entry_frame, text="f(x)",bg="lightyellow")
 biseccion_label2.pack(side=tk.LEFT)
@@ -108,7 +116,7 @@ intervalo_label_b.pack(side=tk.LEFT)
 intervalo_entry_b = tk.Entry(biseccion_entry_frame, width=20)
 intervalo_entry_b.pack(side=tk.LEFT, padx=5)
 
-error_label = tk.Label(biseccion_entry_frame, text="error",bg="lightyellow")
+error_label = tk.Label(biseccion_entry_frame, text="Error",bg="lightyellow")
 error_label.pack(side=tk.LEFT)
 
 error_entry = tk.Entry(biseccion_entry_frame, width=20)
@@ -128,10 +136,14 @@ taylor_frame.pack(fill=tk.X, pady=20)
 
 taylor_label = tk.Label(taylor_frame, text="Polinomio de Taylor", font=("Arial", 16, "bold"),bg="lavender")
 taylor_label.pack(pady=10)
+
+taylor_label_descrip = tk.Label(taylor_frame, 
+                                text="Ingrese los valores Ejm: f(x)= exp(x),  Grado= 3,  x0= 3.0  (Grado: grado del polinomio, x0: punto donde se aproxima)",bg="lavender")
+taylor_label_descrip.pack()
 ##
 
 taylor_entry_frame = tk.Frame(taylor_frame,bg="lavender")
-taylor_entry_frame.pack(pady=30)
+taylor_entry_frame.pack(pady=10)
 ####
 
 taylor_f_entry_label = tk.Label(taylor_entry_frame, text="f(x)",bg="lavender")

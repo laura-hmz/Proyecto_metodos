@@ -32,7 +32,7 @@ def taylor_polynomial(f_expr, a, n):
     # Agregar una leyenda y mostrar la gráfica
     p1.extend(p2)
     p1.legend = True
-    p1.title("Gráfica de aproximación polinomio de Taylor")
+    p1.title="Gráfica de aproximación polinomio de Taylor"
     p1.show()
 
 
