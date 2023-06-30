@@ -1,14 +1,16 @@
 import tkinter as tk
 from PIL import Image, ImageTk
-import Biseccion, TaylorLau
+import Biseccion, TaylorLau,Newton_RaphsonV2
 
 def generar_newton_raphson():
     f_expr1 = newton_raphson_entry.get()
     x0 = float(x0_entry.get())
-    error = float(error_entry.get())
+    error = float(error_entry_newton.get())
     iteraciones = int(iteraciones_entry.get())
     
-    # Aquí debes escribir la lógica para generar los resultados del método de Newton-Raphson
+    Newton_RaphsonV2.newthon_raphson(f_expr1, x0, error, iteraciones)
+    #newthon_raphson("x**2-8", 2.0)
+
     
 def generar_biseccion():
     f_expr2 = biseccion_entry.get()
@@ -62,8 +64,8 @@ x0_entry.pack(side=tk.LEFT, padx=5)
 error_label = tk.Label(newton_raphson_entry_frame, text="error",bg="lightblue")
 error_label.pack(side=tk.LEFT)
 
-error_entry = tk.Entry(newton_raphson_entry_frame, width=20)
-error_entry.pack(side=tk.LEFT, padx=5)
+error_entry_newton = tk.Entry(newton_raphson_entry_frame, width=20)
+error_entry_newton.pack(side=tk.LEFT, padx=5)
 
 iteraciones_label = tk.Label(newton_raphson_entry_frame, text="iteraciones",bg="lightblue")
 iteraciones_label.pack(side=tk.LEFT)

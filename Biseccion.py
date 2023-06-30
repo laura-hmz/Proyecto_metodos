@@ -65,7 +65,7 @@ def biseccion(f_expr, a, b, tol):
     plt.scatter(root, f.subs(x, root), color='green', label='Raíz')
     plt.xlabel('x')
     plt.ylabel('f(x)')
-    plt.title('Gráfico de la raíz método de bisección')
+    plt.title('Gráfica de la raíz método de bisección')
     plt.legend()
     plt.grid(True)
     plt.show()
